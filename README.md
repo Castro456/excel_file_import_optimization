@@ -13,6 +13,7 @@
      Handling 500,000 records
      [2024-07-12 21:44:35] local.INFO: Import completed in:1879.9794299603seconds.  
      ```
+   - Testing files are given in `test files` folder.
 
 2. **Memory Analysis**:
    - Monitored memory usage using Laravel logging before and after imports.
@@ -26,8 +27,6 @@
 
 3. **Error Handling Validation**:
    - Added try and catch block in all important events and the error are stored in logging
-
-  ### Testing files are given in `test files` folder
 
 ### Documentation
 

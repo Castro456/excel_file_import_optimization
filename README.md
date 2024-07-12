@@ -5,21 +5,29 @@
 ### Reporting
 
 1. **Speed Evaluation**:
-   - Measured total import time from logs, noting chunk processing times.
+   - Measured total import time from logs, chunk processing times.
      ```sh
+     Handling 10 records
      [2024-07-12 17:25:46] local.INFO: Import completed in:5.0224339962006seconds. 
+
+     Handling 500,000 records
+     [2024-07-12 21:44:35] local.INFO: Import completed in:1879.9794299603seconds.  
      ```
 
 2. **Memory Analysis**:
    - Monitored memory usage using Laravel logging before and after imports.
      ```sh
+     Handling 10 records
      [2024-07-12 17:25:46] local.INFO: Memory usage: 18937616 bytes.
+
+     Handling 500,000 records
+     [2024-07-12 21:44:35] local.INFO: Memory usage: 141710552 bytes.
      ```
 
 3. **Error Handling Validation**:
    - Added try and catch block in all important events and the error are stored in logging
 
-#### Given my tested files in `test files` folder
+  ### Testing files are given in `test files` folder
 
 ### Documentation
 
@@ -43,7 +51,7 @@
 2. **Queue Worker Activation**:
    - Run the queue worker to process jobs:
      ```sh
-     php artisan queue:work --memory=2048M
+     php artisan queue:work --memory=2048M --timeout=3600 --sleep=3 --tries=3
      ```
 
 3. **Monitoring**:
@@ -63,4 +71,4 @@
 4. **Scaling Strategies**:
    - Consider distributed queue systems for scalability, optimize database operations for efficiency.
 
-By following these guidelines, optimize your Laravel import process for performance, reliability, and scalability.
+By following these guidelines, optimize Laravel import process for performance, reliability, and scalability.

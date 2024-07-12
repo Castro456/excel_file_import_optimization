@@ -48,15 +48,6 @@ class ProcessSalesInBatch implements ShouldQueue
                         'item_type' => $row['item_type'] ?? null,
                         'sales_channel' => $row['sales_channel'] ?? null,
                         'order_priority' => $row['order_priority'] ?? null,
-                        'order_date' => Carbon::parse($row['order_date'] ?? now()),
-                        'order_id' => $row['order_id'] ?? null,
-                        'ship_date' => Carbon::parse($row['ship_date'] ?? now()),
-                        'units_sold' => $row['units_sold'] ?? null,
-                        'unit_price' => $row['unit_price'] ?? null,
-                        'unit_cost' => $row['unit_cost'] ?? null,
-                        'total_revenue' => $row['total_revenue'] ?? null,
-                        'total_cost' => $row['total_cost'] ?? null,
-                        'total_profit' => $row['total_profit'] ?? null,
                     ];
                 } catch (\Exception $e) {
                     // Throw an error on which row of processing the problem occurs. 

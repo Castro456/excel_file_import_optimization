@@ -47,7 +47,7 @@
      ```
 
 3. **Monitoring**:
-   - Review logs for job progress and any encountered errors.
+   - Utilized logging for job progress and identified the errors, execution time, memory usage.
 
 ## Deployment Considerations
 
